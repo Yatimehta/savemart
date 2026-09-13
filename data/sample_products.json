@@ -1,0 +1,422 @@
+[
+  {
+    "id": 12714,
+    "name": "Kashmiri Basaar Mix 1 Kg",
+    "slug": "kashmiri-basaar-mix-1-kg",
+    "permalink": "https://www.sabziwala.dk/product/kashmiri-basaar-mix-1-kg/",
+    "sku": "",
+    "price": 90.0,
+    "regular_price": 90.0,
+    "sale_price": null,
+    "on_sale": false,
+    "currency": "DKK",
+    "currency_symbol": "kr.",
+    "in_stock": true,
+    "is_purchasable": true,
+    "description": "Curry Spice Mix",
+    "description_html": "<p>Curry Spice Mix</p>",
+    "short_description": "",
+    "primary_image": "https://www.sabziwala.dk/wp-content/uploads/2024/04/42856.jpg",
+    "images": [
+      "https://www.sabziwala.dk/wp-content/uploads/2024/04/42856.jpg"
+    ],
+    "main_category": "Herbs and Spices",
+    "categories": [
+      "Herbs and Spices"
+    ],
+    "category_details": [
+      {
+        "id": 53,
+        "name": "Herbs and Spices",
+        "slug": "herbs-and-spices"
+      }
+    ],
+    "average_rating": 0.0,
+    "review_count": 0
+  },
+  {
+    "id": 12712,
+    "name": "Gari Yellow 1Kg",
+    "slug": "gari-yellow-1kg",
+    "permalink": "https://www.sabziwala.dk/product/gari-yellow-1kg/",
+    "sku": "",
+    "price": 35.0,
+    "regular_price": 35.0,
+    "sale_price": null,
+    "on_sale": false,
+    "currency": "DKK",
+    "currency_symbol": "kr.",
+    "in_stock": true,
+    "is_purchasable": true,
+    "description": "",
+    "description_html": "",
+    "short_description": "",
+    "primary_image": "https://www.sabziwala.dk/wp-content/uploads/2024/04/42835.jpg",
+    "images": [
+      "https://www.sabziwala.dk/wp-content/uploads/2024/04/42835.jpg"
+    ],
+    "main_category": "Other Flour",
+    "categories": [
+      "Other Flour"
+    ],
+    "category_details": [
+      {
+        "id": 41,
+        "name": "Other Flour",
+        "slug": "other-flour"
+      }
+    ],
+    "average_rating": 0.0,
+    "review_count": 0
+  },
+  {
+    "id": 12707,
+    "name": "Bourn Vita 500g",
+    "slug": "bourn-vita-500g",
+    "permalink": "https://www.sabziwala.dk/product/bourn-vita-500g/",
+    "sku": "",
+    "price": 90.0,
+    "regular_price": 90.0,
+    "sale_price": null,
+    "on_sale": false,
+    "currency": "DKK",
+    "currency_symbol": "kr.",
+    "in_stock": true,
+    "is_purchasable": true,
+    "description": "",
+    "description_html": "",
+    "short_description": "",
+    "primary_image": "https://www.sabziwala.dk/wp-content/uploads/2024/04/42831.jpg",
+    "images": [
+      "https://www.sabziwala.dk/wp-content/uploads/2024/04/42831.jpg"
+    ],
+    "main_category": "Beauty & Health",
+    "categories": [
+      "Beauty & Health"
+    ],
+    "category_details": [
+      {
+        "id": 82,
+        "name": "Beauty & Health",
+        "slug": "beauty-health"
+      }
+    ],
+    "average_rating": 0.0,
+    "review_count": 0
+  },
+  {
+    "id": 12705,
+    "name": "Horlicks 270g",
+    "slug": "horlicks-270g",
+    "permalink": "https://www.sabziwala.dk/product/horlicks-270g/",
+    "sku": "",
+    "price": 48.0,
+    "regular_price": 48.0,
+    "sale_price": null,
+    "on_sale": false,
+    "currency": "DKK",
+    "currency_symbol": "kr.",
+    "in_stock": true,
+    "is_purchasable": true,
+    "description": "",
+    "description_html": "",
+    "short_description": "",
+    "primary_image": "https://www.sabziwala.dk/wp-content/uploads/2024/04/42830.jpg",
+    "images": [
+      "https://www.sabziwala.dk/wp-content/uploads/2024/04/42830.jpg"
+    ],
+    "main_category": "Beauty & Health",
+    "categories": [
+      "Beauty & Health"
+    ],
+    "category_details": [
+      {
+        "id": 82,
+        "name": "Beauty & Health",
+        "slug": "beauty-health"
+      }
+    ],
+    "average_rating": 0.0,
+    "review_count": 0
+  },
+  {
+    "id": 12703,
+    "name": "Cashew Nuts Roasted 200g",
+    "slug": "cashew-nuts-roasted-200g",
+    "permalink": "https://www.sabziwala.dk/product/cashew-nuts-roasted-200g/",
+    "sku": "",
+    "price": 38.0,
+    "regular_price": 38.0,
+    "sale_price": null,
+    "on_sale": false,
+    "currency": "DKK",
+    "currency_symbol": "kr.",
+    "in_stock": true,
+    "is_purchasable": true,
+    "description": "Cashewnødder Ristede",
+    "description_html": "<p>Cashewnødder Ristede</p>",
+    "short_description": "",
+    "primary_image": "https://www.sabziwala.dk/wp-content/uploads/2024/04/42827.jpg",
+    "images": [
+      "https://www.sabziwala.dk/wp-content/uploads/2024/04/42827.jpg"
+    ],
+    "main_category": "Dry fruits and Nuts",
+    "categories": [
+      "Dry fruits and Nuts"
+    ],
+    "category_details": [
+      {
+        "id": 71,
+        "name": "Dry fruits and Nuts",
+        "slug": "dry-fruits-and-nuts"
+      }
+    ],
+    "average_rating": 0.0,
+    "review_count": 0
+  },
+  {
+    "id": 12701,
+    "name": "Pistachios 250g",
+    "slug": "pistachios-250g",
+    "permalink": "https://www.sabziwala.dk/product/pistachios-250g/",
+    "sku": "",
+    "price": 50.0,
+    "regular_price": 50.0,
+    "sale_price": null,
+    "on_sale": false,
+    "currency": "DKK",
+    "currency_symbol": "kr.",
+    "in_stock": true,
+    "is_purchasable": true,
+    "description": "Pistacienødder",
+    "description_html": "<p>Pistacienødder</p>",
+    "short_description": "",
+    "primary_image": "https://www.sabziwala.dk/wp-content/uploads/2024/04/42826.jpg",
+    "images": [
+      "https://www.sabziwala.dk/wp-content/uploads/2024/04/42826.jpg"
+    ],
+    "main_category": "Dry fruits and Nuts",
+    "categories": [
+      "Dry fruits and Nuts"
+    ],
+    "category_details": [
+      {
+        "id": 71,
+        "name": "Dry fruits and Nuts",
+        "slug": "dry-fruits-and-nuts"
+      }
+    ],
+    "average_rating": 0.0,
+    "review_count": 0
+  },
+  {
+    "id": 12699,
+    "name": "Almond Natural 1 Kg",
+    "slug": "almond-natural-1-kg",
+    "permalink": "https://www.sabziwala.dk/product/almond-natural-1-kg/",
+    "sku": "",
+    "price": 78.0,
+    "regular_price": 78.0,
+    "sale_price": null,
+    "on_sale": false,
+    "currency": "DKK",
+    "currency_symbol": "kr.",
+    "in_stock": true,
+    "is_purchasable": true,
+    "description": "Mandler Natural",
+    "description_html": "<p>Mandler Natural</p>",
+    "short_description": "",
+    "primary_image": "https://www.sabziwala.dk/wp-content/uploads/2024/04/42825.jpg",
+    "images": [
+      "https://www.sabziwala.dk/wp-content/uploads/2024/04/42825.jpg"
+    ],
+    "main_category": "Dry fruits and Nuts",
+    "categories": [
+      "Dry fruits and Nuts"
+    ],
+    "category_details": [
+      {
+        "id": 71,
+        "name": "Dry fruits and Nuts",
+        "slug": "dry-fruits-and-nuts"
+      }
+    ],
+    "average_rating": 0.0,
+    "review_count": 0
+  },
+  {
+    "id": 12696,
+    "name": "Pistachio Kernels 250g",
+    "slug": "pistachio-kernels-250g",
+    "permalink": "https://www.sabziwala.dk/product/pistachio-kernels-250g/",
+    "sku": "",
+    "price": 75.0,
+    "regular_price": 75.0,
+    "sale_price": null,
+    "on_sale": false,
+    "currency": "DKK",
+    "currency_symbol": "kr.",
+    "in_stock": true,
+    "is_purchasable": true,
+    "description": "Pistaciekerner",
+    "description_html": "<p>Pistaciekerner</p>",
+    "short_description": "",
+    "primary_image": "https://www.sabziwala.dk/wp-content/uploads/2024/04/42824.jpg",
+    "images": [
+      "https://www.sabziwala.dk/wp-content/uploads/2024/04/42824.jpg"
+    ],
+    "main_category": "Dry fruits and Nuts",
+    "categories": [
+      "Dry fruits and Nuts"
+    ],
+    "category_details": [
+      {
+        "id": 71,
+        "name": "Dry fruits and Nuts",
+        "slug": "dry-fruits-and-nuts"
+      }
+    ],
+    "average_rating": 0.0,
+    "review_count": 0
+  },
+  {
+    "id": 12694,
+    "name": "Pink Peanut 375g",
+    "slug": "pink-peanut-375g",
+    "permalink": "https://www.sabziwala.dk/product/pink-peanut-375g/",
+    "sku": "",
+    "price": 35.0,
+    "regular_price": 35.0,
+    "sale_price": null,
+    "on_sale": false,
+    "currency": "DKK",
+    "currency_symbol": "kr.",
+    "in_stock": true,
+    "is_purchasable": true,
+    "description": "",
+    "description_html": "",
+    "short_description": "",
+    "primary_image": "https://www.sabziwala.dk/wp-content/uploads/2024/04/42820.jpg",
+    "images": [
+      "https://www.sabziwala.dk/wp-content/uploads/2024/04/42820.jpg"
+    ],
+    "main_category": "Dry fruits and Nuts",
+    "categories": [
+      "Dry fruits and Nuts"
+    ],
+    "category_details": [
+      {
+        "id": 71,
+        "name": "Dry fruits and Nuts",
+        "slug": "dry-fruits-and-nuts"
+      }
+    ],
+    "average_rating": 0.0,
+    "review_count": 0
+  },
+  {
+    "id": 12691,
+    "name": "Pink Peanut 1 Kg",
+    "slug": "pink-peanut-1-kg",
+    "permalink": "https://www.sabziwala.dk/product/pink-peanut-1-kg/",
+    "sku": "",
+    "price": 55.0,
+    "regular_price": 55.0,
+    "sale_price": null,
+    "on_sale": false,
+    "currency": "DKK",
+    "currency_symbol": "kr.",
+    "in_stock": true,
+    "is_purchasable": true,
+    "description": "",
+    "description_html": "",
+    "short_description": "",
+    "primary_image": "https://www.sabziwala.dk/wp-content/uploads/2024/04/42816.jpg",
+    "images": [
+      "https://www.sabziwala.dk/wp-content/uploads/2024/04/42816.jpg"
+    ],
+    "main_category": "Dry fruits and Nuts",
+    "categories": [
+      "Dry fruits and Nuts"
+    ],
+    "category_details": [
+      {
+        "id": 71,
+        "name": "Dry fruits and Nuts",
+        "slug": "dry-fruits-and-nuts"
+      }
+    ],
+    "average_rating": 0.0,
+    "review_count": 0
+  },
+  {
+    "id": 12682,
+    "name": "Kashmiri Chilli Pwd 400g",
+    "slug": "kashmiri-chilli-pwd-400g",
+    "permalink": "https://www.sabziwala.dk/product/kashmiri-chilli-pwd-400g/",
+    "sku": "",
+    "price": 75.0,
+    "regular_price": 75.0,
+    "sale_price": null,
+    "on_sale": false,
+    "currency": "DKK",
+    "currency_symbol": "kr.",
+    "in_stock": true,
+    "is_purchasable": true,
+    "description": "",
+    "description_html": "",
+    "short_description": "",
+    "primary_image": "https://www.sabziwala.dk/wp-content/uploads/2024/04/42685.jpg",
+    "images": [
+      "https://www.sabziwala.dk/wp-content/uploads/2024/04/42685.jpg"
+    ],
+    "main_category": "Herbs and Spices",
+    "categories": [
+      "Herbs and Spices"
+    ],
+    "category_details": [
+      {
+        "id": 53,
+        "name": "Herbs and Spices",
+        "slug": "herbs-and-spices"
+      }
+    ],
+    "average_rating": 0.0,
+    "review_count": 0
+  },
+  {
+    "id": 12680,
+    "name": "Alu Bukhara 100g",
+    "slug": "alu-bukhara-100g",
+    "permalink": "https://www.sabziwala.dk/product/alu-bukhara-100g/",
+    "sku": "",
+    "price": 25.0,
+    "regular_price": 25.0,
+    "sale_price": null,
+    "on_sale": false,
+    "currency": "DKK",
+    "currency_symbol": "kr.",
+    "in_stock": true,
+    "is_purchasable": true,
+    "description": "",
+    "description_html": "",
+    "short_description": "",
+    "primary_image": "https://www.sabziwala.dk/wp-content/uploads/2024/04/42687-1.jpg",
+    "images": [
+      "https://www.sabziwala.dk/wp-content/uploads/2024/04/42687-1.jpg"
+    ],
+    "main_category": "Dry fruits and Nuts",
+    "categories": [
+      "Dry fruits and Nuts"
+    ],
+    "category_details": [
+      {
+        "id": 71,
+        "name": "Dry fruits and Nuts",
+        "slug": "dry-fruits-and-nuts"
+      }
+    ],
+    "average_rating": 0.0,
+    "review_count": 0
+  }
+]

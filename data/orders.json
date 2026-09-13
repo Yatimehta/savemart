@@ -1,0 +1,35 @@
+[
+  {
+    "customerName": "Mette Hansen",
+    "email": "mette.hansen@example.dk",
+    "phone": "+45 20 12 34 56",
+    "address": "Nørrebrogade 45, 2. th",
+    "city": "Copenhagen",
+    "postalCode": "2200",
+    "deliverySlot": "Tomorrow 16:00 – 19:00 (Evening Delivery)",
+    "items": [
+      {
+        "productId": 12631,
+        "name": "Whole Round Chilli 200g",
+        "price": 60,
+        "quantity": 1,
+        "image": "https://www.sabziwala.dk/wp-content/uploads/2023/12/42173.jpg"
+      },
+      {
+        "productId": 11780,
+        "name": "Black Pepper Whole 400g",
+        "price": 45,
+        "quantity": 1,
+        "image": "https://www.sabziwala.dk/wp-content/uploads/2022/04/33519-scaled.jpg"
+      }
+    ],
+    "subtotal": 105,
+    "discount": 0,
+    "deliveryFee": 39,
+    "total": 144,
+    "paymentMethod": "MobilePay / Credit Card on Delivery",
+    "id": "SM-497771",
+    "status": "processing",
+    "createdAt": "2026-09-04T05:58:17.771Z"
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "source": "https://www.sabziwala.dk/denmark/",
+  "scraped_at": "2026-09-03T18:52:21Z",
+  "total_products": 1005,
+  "in_stock_count": 947,
+  "out_of_stock_count": 58,
+  "on_sale_count": 12,
+  "products_with_images": 1005,
+  "total_unique_categories": 49,
+  "top_categories": [
+    [
+      "Herbs and Spices",
+      158
+    ],
+    [
+      "Ready Masala",
+      132
+    ],
+    [
+      "Snack & savories",
+      66
+    ],
+    [
+      "Bean, Peas, Lentils and Daal",
+      50
+    ],
+    [
+      "Vegetables",
+      45
+    ],
+    [
+      "Pickle",
+      42
+    ],
+    [
+      "Desserts & Sweets",
+      41
+    ],
+    [
+      "Cake Rusk & Cookies",
+      40
+    ],
+    [
+      "Tea & Coffe",
+      28
+    ],
+    [
+      "Sauce",
+      28
+    ],
+    [
+      "Bakery & Dairy",
+      24
+    ],
+    [
+      "Oil & Ghee",
+      24
+    ],
+    [
+      "Paste",
+      24
+    ],
+    [
+      "Haldiram's Snacks",
+      24
+    ],
+    [
+      "Dry fruits and Nuts",
+      23
+    ]
+  ],
+  "price_stats": {
+    "min_price": 0.0,
+    "max_price": 475.0,
+    "currency": "DKK"
+  }
+}

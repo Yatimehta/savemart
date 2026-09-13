@@ -1,0 +1,289 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import NumberedRoutine from '@/components/NumberedRoutine';
+import CategoryGrid from '@/components/CategoryGrid';
+import RecipeBundles from '@/components/RecipeBundles';
+import ProductList from '@/components/ProductList';
+import CartDrawer from '@/components/CartDrawer';
+import QuickViewModal from '@/components/QuickViewModal';
+import AdminModal from '@/components/AdminModal';
+import Footer from '@/components/Footer';
+import { Product, Category, CartItem } from '@/lib/types';
+
+export default function HomePage() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [routineProducts, setRoutineProducts] = useState<any[]>([]);
+  const [total, setTotal] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
+  // Filters
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('popular');
+  const [inStockOnly, setInStockOnly] = useState(false);
+
+  // Cart & Wishlist
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [wishlistIds, setWishlistIds] = useState<number[]>([]);
+
+  // Modals
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
+  const [isAdminOpen, setIsAdminOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  const showToast = (msg: string) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(null), 3000);
+  };
+
+  // Load routine products
+  useEffect(() => {
+    fetch('/api/products?routine=true')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.routine) setRoutineProducts(data.routine);
+      })
+      .catch(console.error);
+
+    fetch('/api/categories')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.categories) setCategories(data.categories);
+      })
+      .catch(console.error);
+  }, []);
+
+  // Fetch catalog
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (selectedCategory && selectedCategory !== 'All') {
+      params.set('category', selectedCategory);
+    }
+    if (searchQuery) {
+      params.set('search', searchQuery);
+    }
+    if (inStockOnly) {
+      params.set('inStock', 'true');
+    }
+    if (sortBy) {
+      params.set('sort', sortBy);
+    }
+    params.set('page', currentPage.toString());
+    params.set('limit', '24');
+
+    fetch(`/api/products?${params.toString()}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.products) {
+          setProducts(data.products);
+          setTotal(data.total);
+          setTotalPages(data.totalPages);
+        }
+      })
+      .catch(console.error);
+  }, [selectedCategory, searchQuery, sortBy, inStockOnly, currentPage]);
+
+  // Cart actions
+  const handleAddToCart = (product: Product, quantity: number = 1) => {
+    setCartItems((prev) => {
+      const existing = prev.find((item) => item.product.id === product.id);
+      if (existing) {
+        return prev.map((item) =>
+          item.product.id === product.id
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
+        );
+      }
+      return [...prev, { product, quantity }];
+    });
+    showToast(`Added ${quantity}x ${product.name} to cart!`);
+  };
+
+  const handleAddRecipeBundle = (bundleName: string, items: { name: string; price: number }[]) => {
+    items.forEach((item, idx) => {
+      const dummyProd: Product = {
+        id: 99000 + idx + Math.floor(Math.random() * 1000),
+        name: item.name,
+        slug: item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+        price: item.price,
+        regular_price: item.price,
+        currency: 'DKK',
+        currency_symbol: 'kr.',
+        in_stock: true,
+        description: `Fresh culinary ingredient for ${bundleName}.`,
+        primary_image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&auto=format&fit=crop&q=80',
+        main_category: 'Recipe Bundles',
+        categories: ['Recipe Bundles'],
+        unit: 'Standard Pack',
+      };
+      handleAddToCart(dummyProd, 1);
+    });
+    showToast(`Added all ingredients for ${bundleName} to your shopping bag!`);
+    setIsCartOpen(true);
+  };
+
+  const handleUpdateQuantity = (productId: number, newQty: number) => {
+    if (newQty <= 0) {
+      handleRemoveFromCart(productId);
+      return;
+    }
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.product.id === productId ? { ...item, quantity: newQty } : item
+      )
+    );
+  };
+
+  const handleRemoveFromCart = (productId: number) => {
+    setCartItems((prev) => prev.filter((item) => item.product.id !== productId));
+  };
+
+  const handleClearCart = () => {
+    setCartItems([]);
+  };
+
+  // Wishlist toggle
+  const handleToggleWishlist = (product: Product) => {
+    setWishlistIds((prev) => {
+      if (prev.includes(product.id)) {
+        showToast(`Removed from saved items`);
+        return prev.filter((id) => id !== product.id);
+      } else {
+        showToast(`Saved ${product.name} to wishlist!`);
+        return [...prev, product.id];
+      }
+    });
+  };
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#F8FAFC] flex flex-col selection:bg-sky-200">
+      {/* Toast Notification */}
+      {toastMessage && (
+        <div className="fixed bottom-6 right-6 z-50 bg-navy text-white px-5 py-3 rounded-2xl shadow-xl text-xs font-semibold flex items-center gap-2 animate-in slide-in-from-bottom duration-300">
+          <span>✨</span>
+          <span>{toastMessage}</span>
+        </div>
+      )}
+
+      {/* Navbar */}
+      <Navbar
+        cartCount={cartItems.reduce((s, i) => s + i.quantity, 0)}
+        wishlistCount={wishlistIds.length}
+        onOpenCart={() => setIsCartOpen(true)}
+        onOpenSearch={() => scrollToSection('catalog')}
+        onOpenAdmin={() => setIsAdminOpen(true)}
+        onScrollToSection={scrollToSection}
+      />
+
+      <main className="flex-1">
+        {/* Hero Section */}
+        <Hero
+          onExplore={() => scrollToSection('catalog')}
+          onViewRoutine={() => scrollToSection('routine')}
+        />
+
+        {/* Cooking Routine (01-05) Section */}
+        {routineProducts.length > 0 && (
+          <NumberedRoutine
+            routineProducts={routineProducts}
+            onAddToCart={(p) => handleAddToCart(p, 1)}
+            onQuickView={(p) => setQuickViewProduct(p)}
+          />
+        )}
+
+        {/* Categories Section */}
+        <CategoryGrid
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onSelectCategory={(cat) => {
+            setSelectedCategory(cat);
+            setCurrentPage(1);
+            scrollToSection('catalog');
+          }}
+        />
+
+        {/* 1-Click Recipe & Meal Bundles Section */}
+        <RecipeBundles onAddBundleToCart={handleAddRecipeBundle} />
+
+        {/* Dynamic Product Catalog (975 Scraped Products) */}
+        <ProductList
+          products={products}
+          total={total}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          selectedCategory={selectedCategory}
+          searchQuery={searchQuery}
+          sortBy={sortBy}
+          inStockOnly={inStockOnly}
+          onPageChange={(page) => {
+            setCurrentPage(page);
+            scrollToSection('catalog');
+          }}
+          onCategoryChange={(cat) => {
+            setSelectedCategory(cat);
+            setCurrentPage(1);
+          }}
+          onSearchChange={(q) => {
+            setSearchQuery(q);
+            setCurrentPage(1);
+          }}
+          onSortChange={(s) => {
+            setSortBy(s);
+            setCurrentPage(1);
+          }}
+          onInStockChange={(val) => {
+            setInStockOnly(val);
+            setCurrentPage(1);
+          }}
+          onAddToCart={(p) => handleAddToCart(p, 1)}
+          onQuickView={(p) => setQuickViewProduct(p)}
+          wishlistIds={wishlistIds}
+          onToggleWishlist={handleToggleWishlist}
+        />
+      </main>
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Cart Drawer */}
+      <CartDrawer
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        items={cartItems}
+        onUpdateQuantity={handleUpdateQuantity}
+        onRemoveItem={handleRemoveFromCart}
+        onClearCart={handleClearCart}
+      />
+
+      {/* Quick View Modal */}
+      <QuickViewModal
+        product={quickViewProduct}
+        onClose={() => setQuickViewProduct(null)}
+        onAddToCart={handleAddToCart}
+      />
+
+      {/* Lightweight Admin Modal */}
+      <AdminModal
+        isOpen={isAdminOpen}
+        onClose={() => setIsAdminOpen(false)}
+        onProductAdded={(newProd) => {
+          setProducts((prev) => [newProd, ...prev]);
+          setTotal((t) => t + 1);
+        }}
+      />
+    </div>
+  );
+}

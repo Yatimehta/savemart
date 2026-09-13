@@ -1,0 +1,502 @@
+[
+  {
+    "id": 44,
+    "name": "10 kg",
+    "slug": "10-kg",
+    "description": "",
+    "parent": 42,
+    "count": 3,
+    "permalink": "https://www.sabziwala.dk/product-category/rices/10-kg/",
+    "image": null
+  },
+  {
+    "id": 43,
+    "name": "5kg Rice",
+    "slug": "5kg-rice",
+    "description": "",
+    "parent": 42,
+    "count": 8,
+    "permalink": "https://www.sabziwala.dk/product-category/rices/5kg-rice/",
+    "image": null
+  },
+  {
+    "id": 36,
+    "name": "Aggarbati & Colour",
+    "slug": "aggarbati",
+    "description": "",
+    "parent": 0,
+    "count": 13,
+    "permalink": "https://www.sabziwala.dk/product-category/aggarbati/",
+    "image": null
+  },
+  {
+    "id": 40,
+    "name": "Atta",
+    "slug": "atta",
+    "description": "",
+    "parent": 38,
+    "count": 16,
+    "permalink": "https://www.sabziwala.dk/product-category/atta-and-other-flour/atta/",
+    "image": null
+  },
+  {
+    "id": 38,
+    "name": "Atta and other flour",
+    "slug": "atta-and-other-flour",
+    "description": "",
+    "parent": 0,
+    "count": 50,
+    "permalink": "https://www.sabziwala.dk/product-category/atta-and-other-flour/",
+    "image": null
+  },
+  {
+    "id": 128,
+    "name": "Baby items",
+    "slug": "baby",
+    "description": "",
+    "parent": 0,
+    "count": 11,
+    "permalink": "https://www.sabziwala.dk/product-category/baby/",
+    "image": null
+  },
+  {
+    "id": 34,
+    "name": "Bakery & Dairy",
+    "slug": "bakery",
+    "description": "",
+    "parent": 0,
+    "count": 24,
+    "permalink": "https://www.sabziwala.dk/product-category/bakery/",
+    "image": null
+  },
+  {
+    "id": 48,
+    "name": "Bean, Peas, Lentils and Daal",
+    "slug": "lentils-and-daal",
+    "description": "",
+    "parent": 0,
+    "count": 57,
+    "permalink": "https://www.sabziwala.dk/product-category/lentils-and-daal/",
+    "image": null
+  },
+  {
+    "id": 50,
+    "name": "Beans",
+    "slug": "beans-lentils-and-daal",
+    "description": "",
+    "parent": 48,
+    "count": 5,
+    "permalink": "https://www.sabziwala.dk/product-category/lentils-and-daal/beans-lentils-and-daal/",
+    "image": null
+  },
+  {
+    "id": 82,
+    "name": "Beauty & Health",
+    "slug": "beauty-health",
+    "description": "",
+    "parent": 0,
+    "count": 18,
+    "permalink": "https://www.sabziwala.dk/product-category/beauty-health/",
+    "image": null
+  },
+  {
+    "id": 77,
+    "name": "Cake Rusk & Cookies",
+    "slug": "cake-rusk-cookies",
+    "description": "",
+    "parent": 74,
+    "count": 40,
+    "permalink": "https://www.sabziwala.dk/product-category/snack-savories/cake-rusk-cookies/",
+    "image": null
+  },
+  {
+    "id": 81,
+    "name": "Canned Food",
+    "slug": "canned-food",
+    "description": "",
+    "parent": 0,
+    "count": 9,
+    "permalink": "https://www.sabziwala.dk/product-category/canned-food/",
+    "image": null
+  },
+  {
+    "id": 90,
+    "name": "Child Hood",
+    "slug": "child-hood",
+    "description": "",
+    "parent": 0,
+    "count": 9,
+    "permalink": "https://www.sabziwala.dk/product-category/child-hood/",
+    "image": null
+  },
+  {
+    "id": 86,
+    "name": "Desserts & Sweets",
+    "slug": "desserts-sweets",
+    "description": "",
+    "parent": 0,
+    "count": 41,
+    "permalink": "https://www.sabziwala.dk/product-category/desserts-sweets/",
+    "image": null
+  },
+  {
+    "id": 71,
+    "name": "Dry fruits and Nuts",
+    "slug": "dry-fruits-and-nuts",
+    "description": "",
+    "parent": 0,
+    "count": 23,
+    "permalink": "https://www.sabziwala.dk/product-category/dry-fruits-and-nuts/",
+    "image": null
+  },
+  {
+    "id": 67,
+    "name": "Frozen Pratha & Naan",
+    "slug": "frozen-pratha-naan",
+    "description": "",
+    "parent": 66,
+    "count": 6,
+    "permalink": "https://www.sabziwala.dk/product-category/frozen-products/frozen-pratha-naan/",
+    "image": null
+  },
+  {
+    "id": 66,
+    "name": "Frozen Products",
+    "slug": "frozen-products",
+    "description": "",
+    "parent": 0,
+    "count": 35,
+    "permalink": "https://www.sabziwala.dk/product-category/frozen-products/",
+    "image": null
+  },
+  {
+    "id": 69,
+    "name": "Frozen Samosa and Spring Roll/Dej",
+    "slug": "frozen-samosa-and-spring-roll",
+    "description": "",
+    "parent": 66,
+    "count": 11,
+    "permalink": "https://www.sabziwala.dk/product-category/frozen-products/frozen-samosa-and-spring-roll/",
+    "image": null
+  },
+  {
+    "id": 28,
+    "name": "Fruits",
+    "slug": "fruits",
+    "description": "",
+    "parent": 0,
+    "count": 18,
+    "permalink": "https://www.sabziwala.dk/product-category/fruits/",
+    "image": null
+  },
+  {
+    "id": 125,
+    "name": "Fry Products",
+    "slug": "fry-products",
+    "description": "",
+    "parent": 0,
+    "count": 13,
+    "permalink": "https://www.sabziwala.dk/product-category/fry-products/",
+    "image": "https://www.sabziwala.dk/wp-content/uploads/2022/03/img_4321-scaled.jpeg"
+  },
+  {
+    "id": 79,
+    "name": "Gol Gappa & Pani puri",
+    "slug": "gol-gappa-pani-puri",
+    "description": "",
+    "parent": 74,
+    "count": 3,
+    "permalink": "https://www.sabziwala.dk/product-category/snack-savories/gol-gappa-pani-puri/",
+    "image": null
+  },
+  {
+    "id": 75,
+    "name": "Haldiram’s Snacks",
+    "slug": "haldirams-snacks",
+    "description": "",
+    "parent": 74,
+    "count": 24,
+    "permalink": "https://www.sabziwala.dk/product-category/snack-savories/haldirams-snacks/",
+    "image": null
+  },
+  {
+    "id": 53,
+    "name": "Herbs and Spices",
+    "slug": "herbs-and-spices",
+    "description": "",
+    "parent": 0,
+    "count": 158,
+    "permalink": "https://www.sabziwala.dk/product-category/herbs-and-spices/",
+    "image": null
+  },
+  {
+    "id": 35,
+    "name": "Jelly",
+    "slug": "jelly",
+    "description": "",
+    "parent": 0,
+    "count": 12,
+    "permalink": "https://www.sabziwala.dk/product-category/jelly/",
+    "image": null
+  },
+  {
+    "id": 73,
+    "name": "Juice & Water",
+    "slug": "juice-water",
+    "description": "",
+    "parent": 0,
+    "count": 3,
+    "permalink": "https://www.sabziwala.dk/product-category/juice-water/",
+    "image": null
+  },
+  {
+    "id": 94,
+    "name": "KCB Snacks",
+    "slug": "kcb-snacks-snack-savories",
+    "description": "",
+    "parent": 74,
+    "count": 17,
+    "permalink": "https://www.sabziwala.dk/product-category/snack-savories/kcb-snacks-snack-savories/",
+    "image": null
+  },
+  {
+    "id": 70,
+    "name": "Kebab. Nuggets and Sausage",
+    "slug": "kebab-nuggets-and-sausage",
+    "description": "",
+    "parent": 66,
+    "count": 10,
+    "permalink": "https://www.sabziwala.dk/product-category/frozen-products/kebab-nuggets-and-sausage/",
+    "image": null
+  },
+  {
+    "id": 49,
+    "name": "Lentils and Daal",
+    "slug": "lentils-and-daal-lentils-and-daal",
+    "description": "",
+    "parent": 48,
+    "count": 19,
+    "permalink": "https://www.sabziwala.dk/product-category/lentils-and-daal/lentils-and-daal-lentils-and-daal/",
+    "image": null
+  },
+  {
+    "id": 68,
+    "name": "Milk",
+    "slug": "milk",
+    "description": "",
+    "parent": 66,
+    "count": 5,
+    "permalink": "https://www.sabziwala.dk/product-category/frozen-products/milk/",
+    "image": null
+  },
+  {
+    "id": 37,
+    "name": "Mithai Sweets & Mouth Freshner",
+    "slug": "mithai-sweets",
+    "description": "",
+    "parent": 0,
+    "count": 12,
+    "permalink": "https://www.sabziwala.dk/product-category/mithai-sweets/",
+    "image": null
+  },
+  {
+    "id": 116,
+    "name": "Nestle",
+    "slug": "nestle",
+    "description": "",
+    "parent": 0,
+    "count": 2,
+    "permalink": "https://www.sabziwala.dk/product-category/nestle/",
+    "image": null
+  },
+  {
+    "id": 52,
+    "name": "Oil & Ghee",
+    "slug": "oil",
+    "description": "",
+    "parent": 0,
+    "count": 24,
+    "permalink": "https://www.sabziwala.dk/product-category/oil/",
+    "image": null
+  },
+  {
+    "id": 41,
+    "name": "Other Flour",
+    "slug": "other-flour",
+    "description": "",
+    "parent": 38,
+    "count": 22,
+    "permalink": "https://www.sabziwala.dk/product-category/atta-and-other-flour/other-flour/",
+    "image": null
+  },
+  {
+    "id": 80,
+    "name": "Others",
+    "slug": "others",
+    "description": "",
+    "parent": 74,
+    "count": 10,
+    "permalink": "https://www.sabziwala.dk/product-category/snack-savories/others/",
+    "image": null
+  },
+  {
+    "id": 64,
+    "name": "Paste",
+    "slug": "paste",
+    "description": "",
+    "parent": 62,
+    "count": 24,
+    "permalink": "https://www.sabziwala.dk/product-category/paste-and-sauce/paste/",
+    "image": null
+  },
+  {
+    "id": 51,
+    "name": "Peas",
+    "slug": "peas",
+    "description": "",
+    "parent": 48,
+    "count": 9,
+    "permalink": "https://www.sabziwala.dk/product-category/lentils-and-daal/peas/",
+    "image": null
+  },
+  {
+    "id": 63,
+    "name": "Pickle",
+    "slug": "pickle",
+    "description": "",
+    "parent": 62,
+    "count": 27,
+    "permalink": "https://www.sabziwala.dk/product-category/paste-and-sauce/pickle/",
+    "image": null
+  },
+  {
+    "id": 62,
+    "name": "Pickle, Paste and Sauce",
+    "slug": "paste-and-sauce",
+    "description": "",
+    "parent": 0,
+    "count": 87,
+    "permalink": "https://www.sabziwala.dk/product-category/paste-and-sauce/",
+    "image": null
+  },
+  {
+    "id": 57,
+    "name": "Ready Masala",
+    "slug": "ready-masala",
+    "description": "",
+    "parent": 0,
+    "count": 125,
+    "permalink": "https://www.sabziwala.dk/product-category/ready-masala/",
+    "image": null
+  },
+  {
+    "id": 84,
+    "name": "Ready to Eat",
+    "slug": "ready-to-eat",
+    "description": "",
+    "parent": 0,
+    "count": 6,
+    "permalink": "https://www.sabziwala.dk/product-category/ready-to-eat/",
+    "image": null
+  },
+  {
+    "id": 76,
+    "name": "Regal’s Snacks",
+    "slug": "regals-snacks",
+    "description": "",
+    "parent": 74,
+    "count": 6,
+    "permalink": "https://www.sabziwala.dk/product-category/snack-savories/regals-snacks/",
+    "image": null
+  },
+  {
+    "id": 42,
+    "name": "Rice",
+    "slug": "rices",
+    "description": "",
+    "parent": 0,
+    "count": 25,
+    "permalink": "https://www.sabziwala.dk/product-category/rices/",
+    "image": null
+  },
+  {
+    "id": 46,
+    "name": "Rice flakes",
+    "slug": "rice-flakes",
+    "description": "",
+    "parent": 42,
+    "count": 6,
+    "permalink": "https://www.sabziwala.dk/product-category/rices/rice-flakes/",
+    "image": null
+  },
+  {
+    "id": 124,
+    "name": "Salt and Sugar",
+    "slug": "salt-and-sugar",
+    "description": "",
+    "parent": 0,
+    "count": 3,
+    "permalink": "https://www.sabziwala.dk/product-category/salt-and-sugar/",
+    "image": null
+  },
+  {
+    "id": 65,
+    "name": "Sauce",
+    "slug": "sauce",
+    "description": "",
+    "parent": 62,
+    "count": 28,
+    "permalink": "https://www.sabziwala.dk/product-category/paste-and-sauce/sauce/",
+    "image": null
+  },
+  {
+    "id": 74,
+    "name": "Snack & savories",
+    "slug": "snack-savories",
+    "description": "",
+    "parent": 0,
+    "count": 157,
+    "permalink": "https://www.sabziwala.dk/product-category/snack-savories/",
+    "image": null
+  },
+  {
+    "id": 39,
+    "name": "Sooji (Gram flour)",
+    "slug": "sooji-gram-flour",
+    "description": "",
+    "parent": 38,
+    "count": 12,
+    "permalink": "https://www.sabziwala.dk/product-category/atta-and-other-flour/sooji-gram-flour/",
+    "image": null
+  },
+  {
+    "id": 72,
+    "name": "Tea & Coffe",
+    "slug": "tea-coffe",
+    "description": "",
+    "parent": 0,
+    "count": 28,
+    "permalink": "https://www.sabziwala.dk/product-category/tea-coffe/",
+    "image": null
+  },
+  {
+    "id": 15,
+    "name": "Uncategorised",
+    "slug": "uncategorised",
+    "description": "",
+    "parent": 0,
+    "count": 4,
+    "permalink": "https://www.sabziwala.dk/product-category/uncategorised/",
+    "image": null
+  },
+  {
+    "id": 29,
+    "name": "Vegetables",
+    "slug": "vegetables",
+    "description": "",
+    "parent": 0,
+    "count": 45,
+    "permalink": "https://www.sabziwala.dk/product-category/vegetables/",
+    "image": null
+  }
+]
