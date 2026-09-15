@@ -31,12 +31,46 @@ export const authOptions: NextAuthOptions = {
         try {
           const client = await getPool().connect();
           try {
-            const result = await client.query(
+            // Ensure admin_users table exists
+            await client.query(`
+              CREATE TABLE IF NOT EXISTS admin_users (
+                id SERIAL PRIMARY KEY,
+                email VARCHAR(255) UNIQUE NOT NULL,
+                password_hash VARCHAR(255) NOT NULL,
+                created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+              );
+            `);
+
+            let result = await client.query(
               'SELECT id, email, password_hash FROM admin_users WHERE LOWER(email) = $1 LIMIT 1',
               [normalizedEmail]
             );
 
+            const defaultEmail = (process.env.ADMIN_EMAIL || 'admin@savemart.dk').toLowerCase().trim();
+            const defaultPass = process.env.ADMIN_INITIAL_PASSWORD || 'admin123';
+
             if (result.rows.length === 0) {
+              const countRes = await client.query('SELECT COUNT(*) as total FROM admin_users');
+              const totalUsers = parseInt(countRes.rows[0].total, 10);
+
+              if (totalUsers === 0 || normalizedEmail === defaultEmail) {
+                if (credentials.password === defaultPass) {
+                  // Auto-seed default admin into PostgreSQL
+                  const hash = await bcrypt.hash(defaultPass, 10);
+                  const insertRes = await client.query(
+                    `INSERT INTO admin_users (email, password_hash)
+                     VALUES ($1, $2)
+                     ON CONFLICT (email) DO UPDATE SET password_hash = EXCLUDED.password_hash
+                     RETURNING id, email;`,
+                    [defaultEmail, hash]
+                  );
+                  return {
+                    id: insertRes.rows[0].id.toString(),
+                    email: insertRes.rows[0].email,
+                    name: 'Admin',
+                  };
+                }
+              }
               return null;
             }
 
@@ -44,6 +78,19 @@ export const authOptions: NextAuthOptions = {
             const isValid = await bcrypt.compare(credentials.password, user.password_hash);
 
             if (!isValid) {
+              // If default admin password matches in env, auto-update password hash in DB
+              if (normalizedEmail === defaultEmail && credentials.password === defaultPass) {
+                const newHash = await bcrypt.hash(defaultPass, 10);
+                await client.query(
+                  'UPDATE admin_users SET password_hash = $1 WHERE id = $2',
+                  [newHash, user.id]
+                );
+                return {
+                  id: user.id.toString(),
+                  email: user.email,
+                  name: 'Admin',
+                };
+              }
               return null;
             }
 
