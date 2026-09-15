@@ -71,7 +71,6 @@ export default function Footer() {
               <li><a href="#hero" className="hover:text-navy transition">Home</a></li>
               <li><a href="#routine" className="hover:text-navy transition">Cooking Routine (01–05)</a></li>
               <li><a href="#categories" className="hover:text-navy transition">Category Aisles</a></li>
-              <li><a href="#recipes" className="hover:text-navy transition">Recipe Bundles</a></li>
               <li><a href="#catalog" className="hover:text-navy transition">All 975 Groceries</a></li>
             </ul>
           </div>

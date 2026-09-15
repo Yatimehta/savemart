@@ -1,14 +1,15 @@
 'use client';
 
 import React from 'react';
-import { Search, ShoppingBag, Heart, Menu, X, Sparkles, ShieldCheck, ChefHat } from 'lucide-react';
+import Link from 'next/link';
+import { Search, ShoppingBag, Heart, Menu, X, Sparkles, ShieldCheck } from 'lucide-react';
 
 interface NavbarProps {
   cartCount: number;
   wishlistCount: number;
   onOpenCart: () => void;
   onOpenSearch: () => void;
-  onOpenAdmin: () => void;
+  onOpenAdmin?: () => void;
   onScrollToSection: (id: string) => void;
 }
 
@@ -17,7 +18,6 @@ export default function Navbar({
   wishlistCount,
   onOpenCart,
   onOpenSearch,
-  onOpenAdmin,
   onScrollToSection,
 }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
@@ -75,24 +75,17 @@ export default function Navbar({
             Aisles & Categories
           </button>
           <button 
-            onClick={() => onScrollToSection('recipes')}
-            className="hover:text-navy transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-navy hover:after:w-full after:transition-all flex items-center gap-1"
-          >
-            <ChefHat className="w-3.5 h-3.5 text-sky-700" />
-            <span>Recipe Bundles</span>
-          </button>
-          <button 
             onClick={() => onScrollToSection('catalog')}
             className="hover:text-navy transition relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-navy hover:after:w-full after:transition-all"
           >
             All Groceries (975)
           </button>
-          <button 
-            onClick={onOpenAdmin}
+          <Link 
+            href="/admin"
             className="text-xs text-navy/60 hover:text-navy transition"
           >
             Admin
-          </button>
+          </Link>
         </nav>
 
         {/* Right Action Icons & Pill CTA */}
@@ -175,24 +168,18 @@ export default function Navbar({
               Aisles & Categories
             </button>
             <button
-              onClick={() => { onScrollToSection('recipes'); setMobileMenuOpen(false); }}
-              className="text-left py-2 border-b border-sky-50 text-sky-800 font-semibold flex items-center gap-1.5"
-            >
-              <ChefHat className="w-4 h-4 text-sky-700" />
-              <span>Recipe Bundles (1-Click)</span>
-            </button>
-            <button
               onClick={() => { onScrollToSection('catalog'); setMobileMenuOpen(false); }}
               className="text-left py-2 border-b border-sky-50"
             >
               All Groceries (975)
             </button>
-            <button
-              onClick={() => { onOpenAdmin(); setMobileMenuOpen(false); }}
+            <Link
+              href="/admin"
+              onClick={() => setMobileMenuOpen(false)}
               className="text-left py-2 text-xs text-navy/60"
             >
               Admin Dashboard
-            </button>
+            </Link>
           </div>
           <button
             onClick={() => { onScrollToSection('catalog'); setMobileMenuOpen(false); }}

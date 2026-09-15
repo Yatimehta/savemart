@@ -5,11 +5,9 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import NumberedRoutine from '@/components/NumberedRoutine';
 import CategoryGrid from '@/components/CategoryGrid';
-import RecipeBundles from '@/components/RecipeBundles';
 import ProductList from '@/components/ProductList';
 import CartDrawer from '@/components/CartDrawer';
 import QuickViewModal from '@/components/QuickViewModal';
-import AdminModal from '@/components/AdminModal';
 import Footer from '@/components/Footer';
 import { Product, Category, CartItem } from '@/lib/types';
 
@@ -34,7 +32,6 @@ export default function HomePage() {
   // Modals
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
-  const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const showToast = (msg: string) => {
@@ -105,29 +102,6 @@ export default function HomePage() {
     showToast(`Added ${quantity}x ${product.name} to cart!`);
   };
 
-  const handleAddRecipeBundle = (bundleName: string, items: { name: string; price: number }[]) => {
-    items.forEach((item, idx) => {
-      const dummyProd: Product = {
-        id: 99000 + idx + Math.floor(Math.random() * 1000),
-        name: item.name,
-        slug: item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
-        price: item.price,
-        regular_price: item.price,
-        currency: 'DKK',
-        currency_symbol: 'kr.',
-        in_stock: true,
-        description: `Fresh culinary ingredient for ${bundleName}.`,
-        primary_image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&auto=format&fit=crop&q=80',
-        main_category: 'Recipe Bundles',
-        categories: ['Recipe Bundles'],
-        unit: 'Standard Pack',
-      };
-      handleAddToCart(dummyProd, 1);
-    });
-    showToast(`Added all ingredients for ${bundleName} to your shopping bag!`);
-    setIsCartOpen(true);
-  };
-
   const handleUpdateQuantity = (productId: number, newQty: number) => {
     if (newQty <= 0) {
       handleRemoveFromCart(productId);
@@ -184,7 +158,6 @@ export default function HomePage() {
         wishlistCount={wishlistIds.length}
         onOpenCart={() => setIsCartOpen(true)}
         onOpenSearch={() => scrollToSection('catalog')}
-        onOpenAdmin={() => setIsAdminOpen(true)}
         onScrollToSection={scrollToSection}
       />
 
@@ -214,9 +187,6 @@ export default function HomePage() {
             scrollToSection('catalog');
           }}
         />
-
-        {/* 1-Click Recipe & Meal Bundles Section */}
-        <RecipeBundles onAddBundleToCart={handleAddRecipeBundle} />
 
         {/* Dynamic Product Catalog (975 Scraped Products) */}
         <ProductList
@@ -273,16 +243,6 @@ export default function HomePage() {
         product={quickViewProduct}
         onClose={() => setQuickViewProduct(null)}
         onAddToCart={handleAddToCart}
-      />
-
-      {/* Lightweight Admin Modal */}
-      <AdminModal
-        isOpen={isAdminOpen}
-        onClose={() => setIsAdminOpen(false)}
-        onProductAdded={(newProd) => {
-          setProducts((prev) => [newProd, ...prev]);
-          setTotal((t) => t + 1);
-        }}
       />
     </div>
   );
