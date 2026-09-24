@@ -62,25 +62,27 @@ function LoginForm() {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         {/* Brand Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 mb-2">
-            <span className="font-serif-luxury text-3xl font-bold tracking-wider text-navy">
+          <div className="inline-flex items-center gap-2.5 mb-2">
+            <span className="font-heading font-black text-3xl tracking-tight text-navy">
               SAVEMART
             </span>
-            <span className="text-amber-500 text-sm animate-pulse">✿</span>
+            <span className="text-[10px] uppercase font-black px-1.5 py-0.5 rounded bg-leaf-light text-leaf border border-leaf/20">
+              DK
+            </span>
           </div>
-          <p className="text-xs uppercase tracking-widest font-semibold text-navy/60">
-            Administrative Access Portal
+          <p className="text-xs uppercase tracking-widest font-bold text-sky-900/70">
+            Supermarket Administration Portal
           </p>
         </div>
 
         {/* Card Container */}
-        <div className="bg-white/80 backdrop-blur-md py-8 px-6 shadow-xl border border-sky-100 rounded-3xl sm:px-10">
+        <div className="bg-white/90 backdrop-blur-md py-8 px-6 shadow-xl border border-sky-100 rounded-3xl sm:px-10">
           <div className="flex items-center gap-3 mb-6 pb-4 border-b border-sky-100">
             <div className="w-10 h-10 rounded-2xl bg-sky-100 flex items-center justify-center text-navy shadow-inner">
               <Lock className="w-5 h-5 text-sky-800" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-navy font-serif-luxury">Admin Sign In</h2>
+              <h2 className="text-lg font-black text-navy font-heading">Admin Sign In</h2>
               <p className="text-xs text-navy/60">Sign in to manage inventory & orders</p>
             </div>
           </div>

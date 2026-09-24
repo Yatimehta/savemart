@@ -38,8 +38,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        serif: ['var(--font-cormorant)', 'Playfair Display', 'Georgia', 'serif'],
-        sans: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'Inter', 'sans-serif'],
+        heading: ['Poppins', 'Plus Jakarta Sans', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
       },
       boxShadow: {
         'soft': '0 8px 30px rgba(169, 198, 232, 0.25)',

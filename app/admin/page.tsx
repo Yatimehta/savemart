@@ -123,15 +123,14 @@ export default function AdminDashboardPage() {
             </Link>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-serif-luxury text-xl font-bold tracking-wider text-navy">
+                <span className="font-heading font-black text-xl tracking-tight text-navy">
                   SAVEMART
                 </span>
-                <span className="text-amber-500 text-xs">✿</span>
-                <span className="text-[10px] tracking-widest uppercase px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 font-bold">
+                <span className="text-[10px] tracking-widest uppercase px-2 py-0.5 rounded-full bg-leaf-light text-leaf font-bold border border-leaf/20">
                   ADMIN
                 </span>
               </div>
-              <p className="text-[11px] text-navy/50">Operations & Inventory Management</p>
+              <p className="text-[11px] text-navy/60 font-medium">Supermarket Operations & Inventory</p>
             </div>
           </div>
 
@@ -197,8 +196,8 @@ export default function AdminDashboardPage() {
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-xl font-bold text-navy font-serif-luxury">Customer Orders</h1>
-                <p className="text-xs text-navy/60">Real-time incoming orders from Danish storefront</p>
+                <h1 className="text-xl font-black text-navy font-heading">Customer Orders</h1>
+                <p className="text-xs text-navy/60 font-medium">Real-time incoming orders from Danish storefront</p>
               </div>
             </div>
 
@@ -274,7 +273,7 @@ export default function AdminDashboardPage() {
 
                     <div className="pt-3 border-t border-sky-100 flex items-center justify-between">
                       <span className="text-xs font-bold text-navy/70">Total Paid:</span>
-                      <span className="text-base font-bold text-navy font-serif-luxury">
+                      <span className="text-base font-black text-navy font-heading">
                         {Number(order.total).toFixed(2)} kr.
                       </span>
                     </div>
@@ -294,7 +293,7 @@ export default function AdminDashboardPage() {
                   <Boxes className="w-5 h-5 text-sky-800" />
                 </div>
                 <div>
-                  <h2 className="text-lg font-bold text-navy font-serif-luxury">
+                  <h2 className="text-lg font-black text-navy font-heading">
                     Add Product to Catalog
                   </h2>
                   <p className="text-xs text-navy/60">

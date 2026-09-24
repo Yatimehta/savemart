@@ -81,7 +81,7 @@ export default function AdminModal({
       <div className="relative bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-sky-100 z-10 animate-in fade-in zoom-in-95 duration-200">
         <div className="flex items-center justify-between pb-4 border-b border-sky-100 mb-6">
           <div className="flex items-center gap-2">
-            <h2 className="font-serif-luxury text-xl font-bold text-navy">
+            <h2 className="font-heading text-xl font-bold text-navy">
               SaveMart Management Dashboard
             </h2>
           </div>

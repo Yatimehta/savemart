@@ -3,8 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import CategoryTilesRow from '@/components/CategoryTilesRow';
+import FreshPicksSection from '@/components/FreshPicksSection';
+import PromoBanners from '@/components/PromoBanners';
+import TrustInfoBar from '@/components/TrustInfoBar';
 import NumberedRoutine from '@/components/NumberedRoutine';
-import CategoryGrid from '@/components/CategoryGrid';
 import ProductList from '@/components/ProductList';
 import CartDrawer from '@/components/CartDrawer';
 import QuickViewModal from '@/components/QuickViewModal';
@@ -39,7 +42,7 @@ export default function HomePage() {
     setTimeout(() => setToastMessage(null), 3000);
   };
 
-  // Load routine products
+  // Load routine products & categories
   useEffect(() => {
     fetch('/api/products?routine=true')
       .then((res) => res.json())
@@ -142,33 +145,65 @@ export default function HomePage() {
     }
   };
 
+  const handleSelectCategory = (catName: string) => {
+    setSelectedCategory(catName);
+    setCurrentPage(1);
+    scrollToSection('catalog');
+  };
+
   return (
-    <div className="min-h-screen bg-[#F8FAFC] flex flex-col selection:bg-sky-200">
+    <div className="min-h-screen bg-[#F6FAFE] flex flex-col selection:bg-sky-200">
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-navy text-white px-5 py-3 rounded-2xl shadow-xl text-xs font-semibold flex items-center gap-2 animate-in slide-in-from-bottom duration-300">
-          <span>✨</span>
+        <div className="fixed bottom-6 right-6 z-50 bg-[#0F2844] text-white px-5 py-3 rounded-2xl shadow-xl text-xs font-bold flex items-center gap-2 animate-in slide-in-from-bottom duration-300">
+          <span>🛒</span>
           <span>{toastMessage}</span>
         </div>
       )}
 
-      {/* Navbar */}
+      {/* 1. Header (FreshKart style: Top logo/search/cart + Secondary category nav) */}
       <Navbar
         cartCount={cartItems.reduce((s, i) => s + i.quantity, 0)}
         wishlistCount={wishlistIds.length}
+        searchQuery={searchQuery}
+        onSearchChange={(q) => {
+          setSearchQuery(q);
+          setCurrentPage(1);
+        }}
         onOpenCart={() => setIsCartOpen(true)}
-        onOpenSearch={() => scrollToSection('catalog')}
+        selectedCategory={selectedCategory}
+        onSelectCategory={handleSelectCategory}
         onScrollToSection={scrollToSection}
       />
 
-      <main className="flex-1">
-        {/* Hero Section */}
+      <main className="flex-1 space-y-2">
+        {/* 2. Hero Section (FreshKart style with doodles, Groceries Made Easy, Tote bag) */}
         <Hero
           onExplore={() => scrollToSection('catalog')}
           onViewRoutine={() => scrollToSection('routine')}
+          onSelectCategory={handleSelectCategory}
         />
 
-        {/* Cooking Routine (01-05) Section */}
+        {/* 3. Category Tiles Row (6 Pastel Category Cards) */}
+        <CategoryTilesRow onSelectCategory={handleSelectCategory} />
+
+        {/* 4. Fresh Picks for You (5-Card Product Row) */}
+        <FreshPicksSection
+          products={products}
+          onAddToCart={(p, q) => handleAddToCart(p, q || 1)}
+          onQuickView={(p) => setQuickViewProduct(p)}
+          wishlistIds={wishlistIds}
+          onToggleWishlist={handleToggleWishlist}
+          onViewAll={() => scrollToSection('catalog')}
+        />
+
+        {/* 5. Promo Banners Row (3 Wide Cards) */}
+        <PromoBanners onSelectCategory={handleSelectCategory} />
+
+        {/* 6. Trust & Info Bar (4 Columns) */}
+        <TrustInfoBar />
+
+        {/* 7. Cooking Routine (01-05) Section */}
         {routineProducts.length > 0 && (
           <NumberedRoutine
             routineProducts={routineProducts}
@@ -177,18 +212,7 @@ export default function HomePage() {
           />
         )}
 
-        {/* Categories Section */}
-        <CategoryGrid
-          categories={categories}
-          selectedCategory={selectedCategory}
-          onSelectCategory={(cat) => {
-            setSelectedCategory(cat);
-            setCurrentPage(1);
-            scrollToSection('catalog');
-          }}
-        />
-
-        {/* Dynamic Product Catalog (975 Scraped Products) */}
+        {/* 8. Full Product Catalog (975 Scraped Products) */}
         <ProductList
           products={products}
           total={total}

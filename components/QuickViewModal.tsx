@@ -66,7 +66,7 @@ export default function QuickViewModal({
               <span className="text-xs font-bold text-sky-800 tracking-wider uppercase">
                 {product.main_category || 'Groceries'}
               </span>
-              <h3 className="font-serif-luxury text-2xl font-bold text-navy leading-tight">
+              <h3 className="font-heading text-xl sm:text-2xl font-black text-navy leading-tight">
                 {product.name}
               </h3>
             </div>

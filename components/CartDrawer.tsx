@@ -110,7 +110,7 @@ export default function CartDrawer({
           <div className="p-6 border-b border-sky-100 flex items-center justify-between bg-sky-50/50">
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-navy" />
-              <h2 className="font-serif-luxury text-xl font-bold text-navy">
+              <h2 className="font-heading text-lg sm:text-xl font-black text-navy">
                 {checkoutStep === 'cart' && 'Your Shopping Bag'}
                 {checkoutStep === 'checkout' && 'Fast Checkout'}
                 {checkoutStep === 'success' && 'Order Confirmed!'}
@@ -348,7 +348,7 @@ export default function CartDrawer({
                 <div className="w-16 h-16 rounded-full bg-emerald-100 text-leaf flex items-center justify-center mx-auto shadow-md">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h3 className="font-serif-luxury text-2xl font-bold text-navy">
+                <h3 className="font-heading text-xl sm:text-2xl font-black text-navy">
                   Tusind Tak! Order Placed!
                 </h3>
                 <p className="text-xs text-navy/70 max-w-xs mx-auto">

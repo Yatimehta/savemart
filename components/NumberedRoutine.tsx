@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Product } from '@/lib/types';
-import { ShoppingCart, Eye, Sparkles, ChevronRight } from 'lucide-react';
+import { ShoppingBag, Eye, Sparkles, ChevronRight, Plus, Check } from 'lucide-react';
 
 interface NumberedRoutineProps {
   routineProducts: (Product & { stepNumber: string; stepLabel: string })[];
@@ -15,6 +15,8 @@ export default function NumberedRoutine({
   onAddToCart,
   onQuickView,
 }: NumberedRoutineProps) {
+  const [addedId, setAddedId] = React.useState<number | null>(null);
+
   // Reliable image fallback
   const getSafeImage = (p: Product) => {
     if (p.primary_image && !p.primary_image.includes('–')) {
@@ -23,38 +25,51 @@ export default function NumberedRoutine({
     return `https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&auto=format&fit=crop&q=80`;
   };
 
+  const handleAdd = (item: Product) => {
+    onAddToCart(item);
+    setAddedId(item.id);
+    setTimeout(() => setAddedId(null), 1200);
+  };
+
   return (
-    <section id="routine" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      {/* Section Header (Directly modeled after Reference Image 1 "HAIR CARE") */}
-      <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-semibold tracking-widest uppercase">
+    <section id="routine" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Section Header */}
+      <div className="text-center max-w-3xl mx-auto mb-10 space-y-2">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-900 text-xs font-bold tracking-widest uppercase">
           <Sparkles className="w-3.5 h-3.5 text-sky-600" />
-          <span>The Daily Ritual</span>
+          <span>The Everyday South Asian Kitchen</span>
         </div>
-        <h2 className="font-serif-luxury text-3xl sm:text-5xl font-bold text-navy tracking-tight uppercase">
-          COOKING ROUTINE
+        <h2 className="font-heading text-2xl sm:text-4xl font-black text-navy tracking-tight uppercase">
+          Daily Cooking Routine (01–05)
         </h2>
-        <p className="text-xs sm:text-sm font-semibold tracking-wider text-navy/60 uppercase max-w-xl mx-auto leading-relaxed">
-          WE'RE BRINGING AUTHENTIC FLAVOR TO EACH STEP OF YOUR DAILY COOKING RITUAL
+        <p className="text-xs sm:text-sm font-semibold tracking-wide text-navy/70 uppercase max-w-xl mx-auto leading-relaxed">
+          Essential pantry building blocks for authentic home-cooked curries and daily meals
         </p>
       </div>
 
-      {/* Numbered Row 01, 02, 03, 04, 05 (Exact BeautyBoo layout) */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
+      {/* Numbered Row 01, 02, 03, 04, 05 */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
         {routineProducts.map((item) => {
           return (
             <div
               key={item.id}
-              className="group flex flex-col items-center text-center relative transition-transform duration-300 hover:-translate-y-1.5"
+              className="group bg-white rounded-2xl p-3.5 border border-sky-100/90 shadow-card hover:shadow-soft hover:border-sky-300 transition-all duration-300 flex flex-col justify-between"
             >
-              {/* Step Number (01, 02, 03, 04, 05) */}
-              <div className="w-full text-left font-serif-luxury text-xl sm:text-2xl font-bold text-navy/40 group-hover:text-sky-600 transition pl-2">
-                {item.stepNumber}
+              {/* Step Header */}
+              <div className="flex items-center justify-between border-b border-sky-50 pb-2">
+                <span className="font-heading text-lg font-black text-sky-700 bg-sky-50 px-2 py-0.5 rounded-lg border border-sky-100">
+                  {item.stepNumber}
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-sky-900 line-clamp-1">
+                  {item.stepLabel}
+                </span>
               </div>
 
               {/* Product Container */}
-              <div className="relative w-full aspect-[3/4] bg-white rounded-3xl p-4 my-3 flex items-center justify-center border border-sky-50 shadow-card group-hover:shadow-soft group-hover:border-sky-200 transition-all overflow-hidden">
-                {/* Product Image */}
+              <div 
+                onClick={() => onQuickView(item)}
+                className="relative w-full aspect-square bg-sky-50/30 rounded-xl p-3 my-2.5 flex items-center justify-center cursor-pointer overflow-hidden"
+              >
                 <img
                   src={getSafeImage(item)}
                   alt={item.name}
@@ -63,45 +78,59 @@ export default function NumberedRoutine({
                     e.currentTarget.onerror = null;
                     e.currentTarget.src = 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&auto=format&fit=crop&q=80';
                   }}
+                  loading="lazy"
                 />
 
-                {/* Floating Quick Actions on Hover */}
-                <div className="absolute inset-0 bg-navy/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
-                  <button
-                    onClick={() => onQuickView(item)}
-                    className="p-3 bg-white text-navy rounded-full shadow-lg hover:bg-sky-50 transition transform translate-y-2 group-hover:translate-y-0"
-                    title="Quick View"
-                  >
-                    <Eye className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={() => onAddToCart(item)}
-                    className="p-3 bg-coral text-white rounded-full shadow-lg hover:bg-coral-hover transition transform translate-y-2 group-hover:translate-y-0"
-                    title="Add to Cart"
-                  >
-                    <ShoppingCart className="w-4 h-4" />
-                  </button>
-                </div>
+                {/* Quick View Floating Pill */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onQuickView(item);
+                  }}
+                  className="absolute bottom-2 right-2 p-1.5 rounded-lg bg-white/90 text-navy shadow-sm hover:bg-white transition opacity-0 group-hover:opacity-100"
+                  title="Quick View"
+                >
+                  <Eye className="w-3.5 h-3.5" />
+                </button>
               </div>
 
-              {/* Product Info */}
-              <div className="w-full space-y-1 px-1">
-                <span className="text-[10px] font-bold tracking-widest text-sky-700 uppercase block">
-                  {item.stepLabel}
-                </span>
-                <h3 className="text-xs sm:text-sm font-semibold text-navy line-clamp-1 group-hover:text-sky-800 transition">
+              {/* Product Info & Quick Action */}
+              <div className="w-full space-y-2">
+                <h3 
+                  onClick={() => onQuickView(item)}
+                  className="text-xs font-bold text-navy line-clamp-2 leading-tight group-hover:text-sky-800 transition cursor-pointer min-h-[2rem]"
+                >
                   {item.name}
                 </h3>
-                <div className="text-sm font-bold text-navy">
-                  {item.price.toFixed(2)} {item.currency_symbol || 'kr.'}
+
+                <div className="flex items-center justify-between pt-1 border-t border-sky-50">
+                  <div>
+                    <span className="text-xs font-black text-navy">
+                      {item.price > 0 ? item.price.toFixed(2) : '25.00'}{' '}
+                      <span className="text-[10px] font-semibold text-navy/60">
+                        {item.currency_symbol || 'kr.'}
+                      </span>
+                    </span>
+                  </div>
+
+                  <button
+                    onClick={() => handleAdd(item)}
+                    className={`p-2 rounded-xl text-xs font-bold transition-all active:scale-95 flex items-center justify-center ${
+                      addedId === item.id
+                        ? 'bg-leaf text-white px-2.5'
+                        : 'bg-navy hover:bg-navy-light text-white shadow-xs'
+                    }`}
+                    title="Add to Cart"
+                  >
+                    {addedId === item.id ? (
+                      <span className="flex items-center gap-1 text-[10px]">
+                        <Check className="w-3 h-3" /> Added
+                      </span>
+                    ) : (
+                      <Plus className="w-3.5 h-3.5 text-sky-200" />
+                    )}
+                  </button>
                 </div>
-                <button
-                  onClick={() => onQuickView(item)}
-                  className="inline-flex items-center gap-1 text-[11px] font-bold text-navy/60 hover:text-sky-700 tracking-wider uppercase pt-1 transition"
-                >
-                  <span>SEE MORE</span>
-                  <ChevronRight className="w-3 h-3" />
-                </button>
               </div>
             </div>
           );

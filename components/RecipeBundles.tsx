@@ -76,7 +76,7 @@ export default function RecipeBundles({ onAddBundleToCart }: RecipeBundlesProps)
             <ChefHat className="w-3.5 h-3.5 text-sky-600" />
             <span>Cook Like a Chef</span>
           </div>
-          <h2 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-navy">
+          <h2 className="font-heading text-2xl sm:text-3xl font-black text-navy">
             1-Click Meal & Recipe Bundles
           </h2>
         </div>
@@ -114,7 +114,7 @@ export default function RecipeBundles({ onAddBundleToCart }: RecipeBundlesProps)
               {/* Body */}
               <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">
-                  <h3 className="font-serif-luxury text-xl font-bold text-navy">
+                  <h3 className="font-heading text-lg font-bold text-navy">
                     {r.title}
                   </h3>
                   <p className="text-xs text-navy/70 leading-relaxed">
